@@ -1,9 +1,8 @@
 # Binary Tricks 
 
-For this first binary trick, I'm trying to implement matrice operation only with numbers in base 2. 
 
 ## Binary matrice
-
+For this first binary trick, I'm trying to implement matrice operation only with numbers in base 2. 
 ### Introduction
 The point of this implementation is to represent the matrix into a single value which is a large base2 number.
 This is the struct that represent my matrix: 
@@ -35,4 +34,7 @@ struct BinaryMatrice a = {.value=0b0110101101110010, .bit_size=2, .row=2, .colum
 struct BinaryMatrice b = {.value=0b1110110111000011, .bit_size=2, .row=2, .column=4};
 struct BinaryMatrice c = {};
 ```
+
+## Python script
+
 
