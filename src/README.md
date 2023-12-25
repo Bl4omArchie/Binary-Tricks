@@ -33,8 +33,4 @@ Let's add the matrice a and b together onto the c matrix:
 struct BinaryMatrice a = {.value=0b0110101101110010, .bit_size=2, .row=2, .column=4};
 struct BinaryMatrice b = {.value=0b1110110111000011, .bit_size=2, .row=2, .column=4};
 struct BinaryMatrice c = {};
-```
-
-## Python script
-
-
+```****
