@@ -15,6 +15,17 @@ def mine_bit_count(a):
     return compt
 
 
+def power_of_2(exp):
+    return 1 << exp
+
+def divide_by_power_of_2(num, exp):
+    return num >> exp
+
+def modulo_power_of_2(num, exp):
+    return num & (power_of_2(exp) - 1)
+
+
+
 if __name__ == "__main__":
     a = 0b11000101101110011100
     b = 0b10111010101100101110
