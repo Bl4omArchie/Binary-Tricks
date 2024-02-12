@@ -31,5 +31,3 @@ n = 0b1111 ^ (1 << 1);
 # Concaténation de deux nombres binaires
 # 1010 + 1111 = 10101111 avec 4 la taille en bit de 1010
 0b1010 | (0b1111 << 4)
-
-# 
