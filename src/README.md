@@ -1,7 +1,4 @@
-# Binary Tricks 
-
-
-## Binary matrice
+# Binary matrice
 For this first binary trick, I'm trying to implement matrice operation only with numbers in base 2. 
 ### Introduction
 The point of this implementation is to represent the matrix into a single value which is a large base2 number.
