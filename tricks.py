@@ -36,14 +36,11 @@ def concatenation(a, b):
     #ex: 0b1010 et 0b1111 donne 0b11111010
     return a | (b << 4)
 
+def erase_bit(n, x):
+    return n & ~(1 << x-1)
 
-"""
-#Effacement du 5e bit (le met à 0)
-n = 0b11011 & ~(1 << 4);  
-
-#Inversion du 2e bit
-n = 0b1111 ^ (1 << 1);
-"""
+def invert_bit(n, x):
+    return n ^ (1 << x-1)
 
 
 if __name__ == "__main__":

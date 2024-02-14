@@ -1,10 +1,6 @@
 import random
 
-def add_bin_opti_2(a, b):
-    while (b):
-        a ^= b
-        b = (~a & b)<<1
-    return a
+
 
 def add_bin_opti_1(a, b):
     while (b):
@@ -12,9 +8,16 @@ def add_bin_opti_1(a, b):
         b = ((a^b) & b)<<1
     return a
 
+
+def add_bin_opti_2(a, b):
+    while (b):
+        a ^= b
+        b = (~a & b)<<1
+    return a
+
 #First version of this algo I've done
 def add_bin_3(a, b):
-    ret, ret= 0, -1
+    res, ret= 0, -1
 
     while (ret != 0):
         res = a ^ b
