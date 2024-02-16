@@ -15,7 +15,8 @@ def check_carry(a: int, b: int, bits):
     c = 0
 
     for _ in range(bits):
-        c = a&1 and b&1
+        c = (a & 1) + (b & 1) + c
+        c >>= 1
         a >>= 1
         b >>= 1
     return c
@@ -24,7 +25,7 @@ def add_bin(a, b, c, mask):
     b += c
     while (b):
         a ^= b
-        b = (((a^b) & b)<<1) & mask
+        b = (((a^b) & b)<<1) & mask     # this mask isn't mandatory in python but as I'm preparing the C version, I know variables will have limited amount of bits
     return a
 
 def add_two_list(a: list, b: list):
@@ -41,7 +42,7 @@ def add_two_list(a: list, b: list):
 
 
 if __name__ == "__main__":
-    a = [0b1010, 0b0000, 0b1011]
+    a = [0b1010, 0b0100, 0b1011]
     b = [0b1111, 0b1100, 0b0001]
 
     print (add_two_list(a, b))
