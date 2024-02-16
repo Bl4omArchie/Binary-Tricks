@@ -11,29 +11,37 @@ First, we anticipate if the result of the addition will lead to a carry. If so, 
 
 """
 
-def add_bin(a, b, c):
+def check_carry(a: int, b: int, bits):
+    c = 0
+
+    for _ in range(bits):
+        c = a&1 and b&1
+        a >>= 1
+        b >>= 1
+    return c
+
+def add_bin(a, b, c, mask):
     b += c
     while (b):
         a ^= b
-        b = ((a^b) & b)<<1
+        b = (((a^b) & b)<<1) & mask
     return a
 
 def add_two_list(a: list, b: list):
-    i = 0
+    c = 0
+    bits = 4
+    mask = 0b1111
     result = []
 
-    while (a | b):
-        c = check_carry(a[0], b[0])
-        result.append(add_bin(a[0], b[0], c))
+    for i in range(max(len(a), len(b))):
+        result.append(add_bin(a[i], b[i], c, mask))
+        c = check_carry(a[i], b[i], bits)
 
-        i += 1
+    return result
 
-
-def check_carry(a: int, b: int):
-    pass 
 
 if __name__ == "__main__":
     a = [0b1010, 0b0000, 0b1011]
     b = [0b1111, 0b1100, 0b0001]
 
-    add_two_list(a, b)
+    print (add_two_list(a, b))
