@@ -1,3 +1,23 @@
+# Binary operators
+
+Bitwise operators
+
+**&**: The bitwise AND operator compares each bit of its first operand with the corresponding bit of its second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+
+
+**|**: The bitwise inclusive OR operator compares each bit of its first operand with the corresponding bit of its second operand. If one of the two bits is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+
+
+**^**: The bitwise exclusive OR (XOR) operator compares each bit of its first operand with the corresponding bit of its second operand. If one bit is 0 and the other bit is 1, the corresponding result bit is set to 1. Otherwise, the corresponding result bit is set to 0.
+
+ 
+**~**: The bitwise complement (NOT) operator flips each bit of a number, if a bit is set the operator will clear it, if it is cleared the operator sets it.
+
+**>>**: Shifts a number to the right by removing the last few binary digits of the number. Each shift by one represents an integer division by 2, so a right shift by  $k$  represents an integer division by  $2^k$ .
+
+**<<**: Shifts a number to left by appending zero digits. In similar fashion to a right shift by  $k$ , a left shift by  $k$  represents a multiplication by  $2^k$ .
+
+
 # Bit manipulation
 - Defining a bit: To define a bit at a given position (set it to 1), use the bitwise OR operation ( | ) with an appropriate mask: ```n = n | (1 << position)```.
 <br/>
@@ -18,68 +38,5 @@
 
 - Create masks: Use bitwise operations to create masks that allow you to select, define, or clear specific bits.
 
-# Binary operators
-
-- logical AND
-
-Truth table:
-  
-|p |q |R |
-|--|-- |--|
-| 0| 0| 0|
-| 0| 1| 0|
-| 1| 0| 0|
-| 1| 1| 1|
-
-Representation:
-  
-| field        | symbol |  
-|:--:          | :--:   |
-|matematic     | ^      |
-|programmation | &      |
-|grammar       | and    |
-|probabilities | ∩      |
-
-<br/>
-
-- logical OR
-
-Truth table:
-  
-|p |q |R |
-|--|-- |--|
-| 0| 0| 0|
-| 0| 1| 1|
-| 1| 0| 1|
-| 1| 1| 1|
-
-Representation:
-
-| field        | symbol |  
-|:--:          | :--:   |
-|matematic     | <      |
-|programmation |  &#124;|
-|grammar       | or     |
-|probabilities | ∪      |
-
-<br/>
-
-- XOR
-
-Truth table:
-  
-|p |q |R |
-|--|-- |--|
-| 0| 0| 0|
-| 0| 1| 1|
-| 1| 0| 1|
-| 1| 1| 0|
-
-
-Representation
-
-| field        | symbol |  
-|:--:          | :--:   |
-|matematic     | &oplus |
-|programmation | ^      |
-|grammar       | exclusif or    |
+# Sources
+[Bit manipulation, cp-algorithm](https://cp-algorithms.com/algebra/bit-manipulation.html)

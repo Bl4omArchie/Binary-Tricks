@@ -44,3 +44,5 @@ if __name__ == "__main__":
 
     print (a*b == karatsuba(a, b))
     print (a*b == mult_bin(a, b))
+
+    print (mult_bin(10, 5))
