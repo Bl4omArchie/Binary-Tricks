@@ -25,7 +25,7 @@ def add_bin(a, b, c, mask):
     b += c
     while (b):
         a ^= b
-        b = (((a^b) & b)<<1) & mask     # this mask isn't mandatory in python but as I'm preparing the C version, I know variables will have limited amount of bits
+        b = (((a^b) & b)<<1) & mask     
     return a
 
 def add_two_list(a: list, b: list):
