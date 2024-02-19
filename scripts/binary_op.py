@@ -58,7 +58,7 @@ def karatsuba_opti_v2(x, y):
     if x < 10 and y < 10:
         return x*y
 
-    n = max(get_length(x), get_length(y))
+    n = max(get_bit_length(x), get_bit_length(y))
     m = (n + 1) >> 1
 
     x_H = x >> m
