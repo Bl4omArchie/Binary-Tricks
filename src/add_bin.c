@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <sys/time.h>
 
@@ -33,10 +34,22 @@ int add_bin_nopti(int a, int b) {
     return res;
 }
 
-int main() {
-    int a = 0xfffaabcb;
-    int b = 0xabcffff;
+uint64_t add_bin_mask(uint64_t a, uint64_t b, int mask) {
+    while (b) {
+        a ^= b;
+        b = (((a^b) & b)<<1)&mask;
+    }
+    return a;
+}
 
+int main() {
+    uint64_t a = 0b1010;
+    uint64_t b = 0b1111;
+    int mask = (1 << 4) - 1;
+
+    printf ("%ld\n", add_bin_mask(a, b, mask));
+
+    /*
     struct timeval tv_start, tv_end;
     gettimeofday(&tv_start, NULL);
 
@@ -62,5 +75,5 @@ int main() {
     gettimeofday(&tv_end, NULL);
     mtime = (tv_end.tv_sec - tv_start.tv_sec) * 1000000.0 + (tv_end.tv_usec - tv_start.tv_usec) / 1000000.0; // in ms
     printf ("%f\n", mtime);
-    
+    */
 }
